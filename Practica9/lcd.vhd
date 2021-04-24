@@ -24,7 +24,7 @@ process(Rst, Clk)
 	begin
 		if (Rst = '1') then 
 			currentState <= S0;
-		elsif (rising_edge(Clk)) then
+		elsif (Clk = '1' and Clk'event) then
 			currentState <= nextState;
 			if(cnt = 500_000) then
 			 cnt <= 0;
